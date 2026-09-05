@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/sgd/routes.py"
+      "destination": `"sgd/__init__.py:app"
     }
   ]
 }
