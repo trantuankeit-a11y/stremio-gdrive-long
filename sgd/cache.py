@@ -1,12 +1,16 @@
 import json
 import pickle
+import os
+import tempfile
 
 
 class Cache:
     def __init__(self, filename, filetype):
-        self.filename = filename
+        # Vercel chỉ cho phép ghi file tạm trong /tmp
+        self.filename = os.path.join(tempfile.gettempdir(), filename)
         self.filetype = filetype
         self.bin = "b" if filetype is pickle else ""
+
         try:
             self.load()
         except FileNotFoundError:
