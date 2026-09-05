@@ -1,2 +1,2 @@
 [tool.vercel]
-entrypoint = "sgd:app"
+entrypoint = "sgd/__init__.py"
